@@ -18,6 +18,7 @@ export const filterSlice = createSlice({
     addFilter: (state, action: PayloadAction<string>) => {
       if (!state.filters.includes(action.payload)) {
         state.filters.push(action.payload);
+        console.log(action.payload);
       }
     },
     removeFilter: (state, action: PayloadAction<string>) => {

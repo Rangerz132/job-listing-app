@@ -1,18 +1,10 @@
 import { useState } from "react";
 import { JobItemData } from "../../types";
 import JobFilter from "./JobFilter";
+import { JobAPI } from "../../api/jobAPI";
 
 const JobItem = (props: { job: JobItemData }) => {
   const [hover, setHover] = useState(false);
-
-  const filters = (job: JobItemData): string[] => {
-    const filters: string[] = [];
-    job.tools.forEach((tool) => filters.push(tool));
-    job.languages.forEach((language) => filters.push(language));
-    filters.push(job.level);
-    filters.push(job.role);
-    return filters;
-  };
 
   return (
     <div
@@ -78,7 +70,7 @@ const JobItem = (props: { job: JobItemData }) => {
 
           {/** Filters */}
           <div className="flex flex-row flex-wrap gap-3">
-            {filters(props.job).map((filter, index) => (
+            {JobAPI.getJobfilters(props.job).map((filter, index) => (
               <JobFilter key={index} filter={filter} />
             ))}
           </div>

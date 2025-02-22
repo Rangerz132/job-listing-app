@@ -11,4 +11,13 @@ export class JobAPI {
       console.error(error);
     }
   }
+
+  static getJobfilters(job: JobItemData): string[] {
+    const filters: string[] = [];
+    job.tools.forEach((tool) => filters.push(tool));
+    job.languages.forEach((language) => filters.push(language));
+    filters.push(job.level);
+    filters.push(job.role);
+    return filters;
+  }
 }
