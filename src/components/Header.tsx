@@ -3,7 +3,7 @@ import HeaderDesktop from "../assets/images/bg-header-desktop.svg";
 
 const Header = () => {
   return (
-    <div className="w-full h-20 bg-desaturated-dark-cyan">
+    <div className="w-full h-20 md:h-40 bg-desaturated-dark-cyan absolute">
       {/** Mobile header */}
       <div
         className="w-full h-full md:hidden"

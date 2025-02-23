@@ -5,6 +5,7 @@ import { JobItemData } from "./types";
 import { JobAPI } from "./api/jobAPI";
 import JobList from "./components/job/JobList";
 import { useSelector } from "react-redux";
+import FilterBar from "./components/filter/filterBar";
 
 function App() {
   const [jobs, setJobs] = useState<JobItemData[]>([]);
@@ -51,7 +52,16 @@ function App() {
   return (
     <div>
       <Header />
-      <JobList jobs={filteredjobs} />
+      <div className="wrapper ">
+        <div
+          className={`flex flex-col space-y-6 ${
+            filters.length > 0 ? "pt-10 md:pt-30" : "pt-24 md:pt-44"
+          }`}
+        >
+          {filters.length > 0 && <FilterBar />}
+          <JobList jobs={filteredjobs} />
+        </div>
+      </div>
     </div>
   );
 }
