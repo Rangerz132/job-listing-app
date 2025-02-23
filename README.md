@@ -4,7 +4,6 @@
 
 The Job Listing Filtering App is a modern React-based application that provides a seamless and interactive job search experience. It allows users to filter job listings dynamically, enhancing usability and efficiency. Built with React, Redux, JSON-Server, and Tailwind CSS, this project ensures a clean UI, smooth state management, and responsive design.
 
-
 ## Getting started
 
 ```bash
@@ -25,15 +24,15 @@ npm run dev
 
 ## Features
 
-- Dynamic Filtering – Click on any job filter to refine the search results.
+- Dynamic Filtering: Click on any job filter to refine the search results.
 
-- Responsive Design – Optimized for all screen sizes using Tailwind CSS.
+- Responsive Design: Optimized for all screen sizes using Tailwind CSS.
 
-- Modular Components – Well-structured and reusable components.
+- Modular Components: Well-structured and reusable components.
 
-- State Management – Efficient data handling with Redux.
+- State Management: Efficient data handling with Redux.
 
-- Mock API – Simulated backend for handling job data.
+- Mock API: Simulated backend for handling job data.
 
 ## Media
 
