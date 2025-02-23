@@ -1,50 +1,40 @@
-# React + TypeScript + Vite
+# Job Listing Filtering App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+The Job Listing Filtering App is a modern React-based application that provides a seamless and interactive job search experience. It allows users to filter job listings dynamically, enhancing usability and efficiency. Built with React, Redux, JSON-Server, and Tailwind CSS, this project ensures a clean UI, smooth state management, and responsive design.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Getting started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm i
+npm run dev-server
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Technologies Used
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- React: Component-based UI development.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Tailwind CSS: Provides utility-first styling for a responsive design.
+
+- JSON-Server : Mock API to simulate backend interactions.
+
+- Redux : State management for efficient data handling.
+
+## Features
+
+- Dynamic Filtering – Click on any job filter to refine the search results.
+
+- Responsive Design – Optimized for all screen sizes using Tailwind CSS.
+
+- Modular Components – Well-structured and reusable components.
+
+- State Management – Efficient data handling with Redux.
+
+- Mock API – Simulated backend for handling job data.
+
+## Media
+
+![](src/assets/design/active-states.jpg)

@@ -5,7 +5,7 @@ import { JobItemData } from "./types";
 import { JobAPI } from "./api/jobAPI";
 import JobList from "./components/job/JobList";
 import { useSelector } from "react-redux";
-import FilterBar from "./components/filter/filterBar";
+import FilterBar from "./components/filter/FilterBar";
 
 function App() {
   const [jobs, setJobs] = useState<JobItemData[]>([]);
