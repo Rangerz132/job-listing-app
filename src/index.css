@@ -13,7 +13,7 @@
 
 @layer base {
   body {
-    @apply font-league-spartan;
+    @apply font-league-spartan bg-light-grayish-cyan-50;
   }
 }
 
