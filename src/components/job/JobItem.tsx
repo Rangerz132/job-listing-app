@@ -10,7 +10,7 @@ const JobItem = (props: { job: JobItemData }) => {
     <div
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      className="w-full bg-white rounded-md shadow-xl shadow-light-grayish-cyan-100 p-6 relative transition-all duration-200 hover:scale-105"
+      className="w-full bg-white rounded-md shadow-xl shadow-light-grayish-cyan-100 p-6 relative transition-all duration-200 hover:scale-105 "
     >
       {/** Left Border */}
       <div
@@ -19,9 +19,9 @@ const JobItem = (props: { job: JobItemData }) => {
         }`}
       ></div>
       {/** Content */}
-      <div className="relative">
+      <div className="relative flex flex-col space-y-3 md:flex-row md:items-center md:justify-between">
         {/** Logo */}
-        <div className="absolute left-0 -top-12 w-12 h-12">
+        <div className="absolute left-0 -top-12 w-12 h-12 ">
           <img src={props.job.logo} />
         </div>
         {/** Top Section */}
@@ -48,7 +48,13 @@ const JobItem = (props: { job: JobItemData }) => {
           </div>
 
           {/** Position */}
-          <h1 className="font-semibold text-very-dark-grayish-cyan">
+          <h1
+            className={`font-semibold ${
+              hover
+                ? "text-desaturated-dark-cyan"
+                : "text-very-dark-grayish-cyan"
+            } transition-colors duration-200`}
+          >
             {props.job.position}
           </h1>
 
@@ -62,20 +68,16 @@ const JobItem = (props: { job: JobItemData }) => {
             {/** Location */}
             <span>{props.job.location}</span>
           </div>
-
-          {/** Border */}
-          <div className="w-full h-[1px] bg-dark-grayish-cyan"></div>
-
-          {/** Bottom Section */}
-
-          {/** Filters */}
-          <div className="flex flex-row flex-wrap gap-3">
-            {JobAPI.getJobfilters(props.job).map((filter, index) => (
-              <JobFilter key={index} filter={filter} />
-            ))}
-          </div>
         </div>
-        <div></div>
+        {/** Border */}
+        <div className="w-full h-[1px] bg-dark-grayish-cyan md:hidden"></div>
+        {/** Bottom Section */}
+        <div className="flex flex-row flex-wrap gap-3">
+          {/** Filters */}
+          {JobAPI.getJobfilters(props.job).map((filter, index) => (
+            <JobFilter key={index} filter={filter} />
+          ))}
+        </div>
       </div>
     </div>
   );
